@@ -6,14 +6,22 @@
 class Produk{
 // membuat properti
 // properti ini bisa diisi didalam class langsung
-public $judul = "judul",
-       $penulis = "penulis",
-       $penerbit = "penerbit",
-       $harga = 0;
+public $judul,
+       $penulis,
+       $penerbit,
+       $harga;
 
 // membuat constructor (method khusus untuk yang disebuah,karena method ini sudah auto dipanggil ketika dibuat instance )
-public function __construct(){
-    echo "hallo";
+// constructor ini menerima parameter untuk mengisi properti didalam setiap class
+// didalam parameter constructor ini dapat mengisi nilai default
+public function __construct($judul="judul",$penulis="penulis",$penerbit="penerbit",$harga=0){
+    // karena didalam parameter adalah variabel lokal
+    // maka harus menambahkan keyword $this untuk dapat mengisi nilai didalam properti
+    $this->judul = $judul;
+    $this->penulis = $penulis;
+    $this->penerbit = $penerbit;
+    $this->harga = $harga;
+
 }
 
 
@@ -23,31 +31,26 @@ public function __construct(){
 public function getLabel(){
     // mengembalikan nilai function getLabel
     // untuk menambahkan properti didalam method,harus menggunakan $this(mengambil properti isi yang ada didalam class yang bersangkutan ketia dibuat instance nya)
-    return "$this->penulis, $this->penerbit";
+    return "$this->judul,$this->penulis, $this->penerbit";
 }
 }
 
-$produk3 = new Produk();
-// satu instan dengan properti lengkap
-$produk3->judul = "Naruto";
-$produk3->penulis = "Masashi Kishimoto";
-$produk3->penerbit = "Shonen Jump";
-$produk3->harga = 30000;
 
-echo "Komik : $produk3->judul,$produk3->penulis ";
+$produk1 = new Produk("Naruto","Masashi Kishimoto","Shonen Jump", 30000);
+/*
+nilai yang ada didalam object akan dikirimkan ke construcor,lalu dipakai untuk menggantikan properti yang ada didalam constructor
+* */
+
+
+$produk2 = new Produk("HarvestMoon","Anonymous","Natsume", "100000");
+
+$produk3 = new Produk("Pepsiman");
+
+
+
+echo "Komik: ".$produk1->getLabel();
 echo "<br>";
-// memanggil method
+echo "Game: ".$produk2->getLabel();
+echo "<br>";
 echo $produk3->getLabel();
-
-echo "<br>";
-
-$produk4 = new Produk();
-$produk4->judul = "Harvest Moon";
-$produk4->penulis = "Anonymous";
-$produk4->penerbit = "Natsume";
-$produk4->harga = 100000;
-
-echo "Komik: ".$produk3->getLabel();
-echo "<br>";
-echo "Game: ".$produk4->getLabel();
 ?>
