@@ -11,6 +11,14 @@ public $judul = "judul",
        $penerbit = "penerbit",
        $harga = 0;
 
+// membuat constructor (method khusus untuk yang disebuah,karena method ini sudah auto dipanggil ketika dibuat instance )
+public function __construct(){
+    echo "hallo";
+}
+
+
+
+
 // membuat method
 public function getLabel(){
     // mengembalikan nilai function getLabel
@@ -18,22 +26,6 @@ public function getLabel(){
     return "$this->penulis, $this->penerbit";
 }
 }
-// // membuat objek produk1 dari instan dari class produk
-// $produk1 = new Produk();
-// // isi properti di dalam class dapat ditimpa dengan menggunakan tanda "->"
-// $produk1->judul = "Naruto";
-// var_dump($produk1);
-
-// $produk2 = new Produk();
-// $produk2->judul = "Harvest moon";
-// // dapat menambah properti baru
-// $produk2->tambahProduk = "wkwkwk";
- /*
- Note : untuk menimpa nilai yang ada didalam properti class harus sesuai dengan nama properti,jika tidak maka akan dibuatkan properti baru.
-
-untuk menimpa properti harusnya menggunakan visibility selain public agar tidak sembarangan ketika menimpa properti
-*/
-// var_dump($produk2);
 
 $produk3 = new Produk();
 // satu instan dengan properti lengkap
