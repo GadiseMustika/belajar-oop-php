@@ -30,7 +30,7 @@ public function __construct($judul="judul",$penulis="penulis",$penerbit="penerbi
 // membuat method
 public function getLabel(){
     // mengembalikan nilai function getLabel
-    // untuk menambahkan properti didalam method,harus menggunakan $this(mengambil properti isi yang ada didalam class yang bersangkutan ketia dibuat instance nya)
+    // untuk menambahkan properti didalam method,harus menggunakan $this(mengambil properti isi yang ada didalam class yang bersangkutan ketika dibuat instance nya)
     return "$this->judul,$this->penulis, $this->penerbit";
 }
 }
