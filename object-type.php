@@ -65,10 +65,10 @@ $produk2 = new Produk("HarvestMoon","Anonymous","Natsume", "100000");
 // dengan memanggil fungsi cetak
 $infoProduk1 = new CetakInfoProduk();
 // memanggil method cetak dari obj infoProduk1
+echo "<h4>Menampilkan infrormasi dari objek info produk</h4>";
 echo $infoProduk1->cetak($produk1);
 
-
-echo "<br>";
+echo "<h4>Menampilkan informasi dari method get label</h4>";
 echo "Komik: ".$produk1->getLabel();
 echo "<br>";
 
