@@ -24,7 +24,7 @@ class Produk
         return "$this->penulis, $this->penerbit";
     }
 
-    public function tampilProduk()
+    public function getInfoProduk()
     {
         $str = "{$this->judul} | {$this->getLabel()} (Rp.{$this->harga})";
 
@@ -48,12 +48,12 @@ class Komik extends Produk{
         $this->jumlahHalaman = $jumlahHalaman;
     }
 
-    // membuat method tampilProduk() dari class Komik
-    public function tampilProduk()
+    // membuat method getInfoProduk() dari class Komik
+    public function getInfoProduk()
     {
-        //mengambil alih method tampilProduk() dari parentnya
+        //mengambil alih method getInfoProduk() dari parentnya
         // mengambil properti dikelas parentnya (parent ::)
-        $str = "Komik : " . parent::tampilProduk() . " -  {$this->jumlahHalaman} Halaman";
+        $str = "Komik : " . parent::getInfoProduk() . " -  {$this->jumlahHalaman} Halaman";
 
         return $str;
     }
@@ -70,9 +70,9 @@ class Game extends Produk{
     }
 
 
-    public function tampilProduk()
+    public function getInfoProduk()
     {
-        $str = "Game : ". parent::tampilProduk() . " ~   {$this->waktuMain} Jam";
+        $str = "Game : ". parent::getInfoProduk() . " ~   {$this->waktuMain} Jam";
 
         return $str;
     }
@@ -84,6 +84,6 @@ $produk1 = new Komik("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000, 100);
 
 $produk2 = new Game("HarvestMoon", "Anonymous", "Natsume", "100000",20);
 
-echo $produk1->tampilProduk();
+echo $produk1->getInfoProduk();
 echo "<br>";
-echo $produk2->tampilProduk();
+echo $produk2->getInfoProduk();
